@@ -15,11 +15,21 @@
 rel="stylesheet" 
 href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+<!-- Animate css -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+<!-- AOS animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+
 <!-- Custom styles -->
  <link rel="stylesheet" href="./css/styles.css"/>
 
     <title>WebStudio</title>
 </head>
+
 <body>
     <header class="header">
     <div class="header-container container">
@@ -65,7 +75,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-norma
             <div class="container">
             <h1 class="hero-title">EFFECTIVE SOLUTIONS FOR YOUR BUSINESS</h1>
             <div class="hero-btn-wrapper">
-                <button class="hero-btn" type="button">Request our service</button>
+                <button  class="hero-btn" type="open-button" data-modal-open>
+              Request our service</button>
             </div>
         </div>
     </section>
@@ -506,7 +517,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-norma
             <span class="footer-accent">Web</span>Studio</a>
         <address class="adress">
             <ul class="content list">
-                <li class="content"><a class="adress-link"href="https://https://goo.gl/maps/fF9Ta2Md7pspU1L37" target="_blank"
+                <li class="content"><a class="adress-link" href="https://https://goo.gl/maps/fF9Ta2Md7pspU1L37" target="_blank"
                     rel="noopener noreferrer">695 Park Ave, New York, NY 10065, United States"
                 </a></li>
                 <li class="content"><a class="contact-link" href="mailto:info@example.com">info@example.com</a></li>
@@ -574,5 +585,19 @@ href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-norma
                           </ul>
     </div>
     </footer>
+
+  <!-- Modal window -->
+  <div class="backdrop is-hidden" data-modal>
+    <div class="modal">
+      <button class="modal-button" type="close-button" data-modal-close>
+      </button>
+    </div>
+  </div>
+
+  <script src="./js/modal.js"></script>
+  <script src="./js/header-scroll.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="./js/aos-animate.js"></script>
+  
 </body>
 </html>
