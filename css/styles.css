@@ -174,6 +174,7 @@ address {
       line-height: calc(16 / 14);
       color: var(--main-txt-cl);
       letter-spacing: 0.02em;
+      transition: color var(--animtime) var(--animfunction);
     }
 
     .header-nav-link-page {
@@ -212,6 +213,7 @@ address {
       color: var(--txt-cl);
       letter-spacing: 0.02em;
       font-weight: 500;
+      transition: color var(--animtime) var(--animfunction);
     }
 
     .header-contact-link:hover,
@@ -227,7 +229,7 @@ address {
 
   /*
     |============================
-    | main
+    | hero
     |============================
   */
   
@@ -278,6 +280,7 @@ address {
     border:none;
     cursor: pointer;
     border-radius: 4px;
+    transition: background-color var(--animtime) var(--animfunction);
     }
 
     .hero-btn:hover,
@@ -290,6 +293,12 @@ address {
       align-items: center;
       justify-content: center;
     }
+
+    /**
+      |============================
+      | work
+      |============================
+    */
     
     .work {
       padding-bottom: 0;
@@ -363,6 +372,30 @@ address {
     gap: var(--indent);
    }
 
+   .about-thumb {
+    position: relative;
+    overflow: hidden;
+   }
+
+   .about-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(47, 48, 58, 0.8);
+    width: 100%;
+    height: 70px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+   }
+
+   .about-overlay-description {
+    font-weight: 700;
+    line-height: calc(16 / 14);
+    text-transform: uppercase;
+    color: var(--accent-txt-cl);
+    text-align: center;
+   }
+
 /*
     |============================
     | team
@@ -432,6 +465,7 @@ address {
   color: var(--socials-txt-cl);
   background-color: var(--second-bg-color);
   border-radius: 50%;
+  transition: background-color var(--animtime) var(--animfunction);
 }
 
 .socials-link:hover,
@@ -442,6 +476,7 @@ address {
 
 .socials-icon {
   fill: currentColor;
+  transition: fill var(--animtime) var(--animfunction);
 }
 
    /*
@@ -491,10 +526,12 @@ address {
   width: 170px;
   height: 92px;
   color: var(--socials-txt-cl);
+  transition: border-color var(--animtime) var(--animfunction);
   }
 
  .customers-icon {
   fill: currentColor;
+  transition: fill var(--animtime) var(--animfunction);
   }
 
 .customers-link:hover .customers-icon,
@@ -525,6 +562,11 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: flex;
     align-items: baseline;
   }
+
+  .adress-wrapper {
+    margin-left: 135px;
+  }
+
 
   .footer-logo {
     font-family: var(--secondary-font);
@@ -558,6 +600,7 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   .adress-link {
     color: var(--accent-txt-cl);
     line-height: calc(24 / 14);
+    transition: color var(--animtime) var(--animfunction);
   }
   
   .contact-link  {
@@ -602,6 +645,7 @@ font-size: 14px;
   fill: var(--accent-txt-cl);
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
+  transition: background-color var(--animtime) var(--animfunction);
 }
 
 .footer-link:hover,
@@ -736,5 +780,62 @@ font-size: 14px;
       | modal window
       |============================
     */
+    .backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2); 
+      
+      transition: opasity var(--animtime) var(--animfunction), visibility var(--animtime) var(--animfunction);
+    }
+
+    .backdrop.is-hidden {
+      opacity: 0;
+      pointer-events: none;
+      visibility: hidden;
+    }
+
+    .modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 528px;
+      height: 581px;
+      background: var(--second-bg-color);
+      border-color: var(--accent-bg-cl);
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      transition: transform var(--animtime) var(--animfunction);
+    }
+
+    .modal-button {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+
+      width: 30px;
+      height: 30px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      background-color: var(--second-bg-color);
+
+      cursor: pointer;
+    }
+
+    .modal-button:hover,
+    .modal-button:focus {
+      fill: var(--brand-txt-cl);
+    }
 
    
